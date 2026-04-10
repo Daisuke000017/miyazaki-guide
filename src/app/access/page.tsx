@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import { accessPoints, accessTips } from "@/data/access";
+import { heroImages } from "@/data/images";
 
 const typeConfig = {
   airport: {
@@ -34,6 +35,7 @@ export default function AccessPage() {
         title="アクセス情報"
         subtitle="宮崎への行き方と県内主要交通拠点からの所要時間を一覧で確認"
         icon={TrainFront}
+        backgroundImage={heroImages.access}
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

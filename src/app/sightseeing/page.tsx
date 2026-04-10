@@ -9,6 +9,7 @@ import {
   sightseeingCategories,
   sightseeingAreas,
 } from "@/data/sightseeing";
+import { heroImages } from "@/data/images";
 
 export default function SightseeingPage() {
   const [search, setSearch] = useState("");
@@ -35,6 +36,7 @@ export default function SightseeingPage() {
         title="観光スポット"
         subtitle="宮崎県内の人気観光スポットをカテゴリ・エリア別に厳選紹介"
         icon={MapPin}
+        backgroundImage={heroImages.sightseeing}
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

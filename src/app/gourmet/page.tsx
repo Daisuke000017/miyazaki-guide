@@ -9,6 +9,7 @@ import {
   gourmetCategories,
   gourmetAreas,
 } from "@/data/gourmet";
+import { heroImages } from "@/data/images";
 
 export default function GourmetPage() {
   const [search, setSearch] = useState("");
@@ -35,6 +36,7 @@ export default function GourmetPage() {
         title="グルメ"
         subtitle="宮崎県内の人気飲食店をカテゴリ・エリア別に厳選紹介"
         icon={UtensilsCrossed}
+        backgroundImage={heroImages.gourmet}
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

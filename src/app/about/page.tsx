@@ -8,6 +8,7 @@ import {
   AlertTriangle,
 } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
+import { heroImages } from "@/data/images";
 
 const contents = [
   {
@@ -49,6 +50,7 @@ export default function AboutPage() {
         title="About"
         subtitle="みやざきガイドについて"
         icon={Info}
+        backgroundImage={heroImages.about}
       />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

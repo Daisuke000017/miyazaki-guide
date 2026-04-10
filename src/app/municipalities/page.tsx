@@ -1,6 +1,7 @@
 import { Building2, Plane, TrainFront, Users } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import { municipalities, regions } from "@/data/municipalities";
+import { heroImages } from "@/data/images";
 
 export default function MunicipalitiesPage() {
   return (
@@ -9,6 +10,7 @@ export default function MunicipalitiesPage() {
         title="市町村紹介"
         subtitle="宮崎県26市町村をエリア別に紹介。各市町村への空港・駅からのアクセス情報付き。"
         icon={Building2}
+        backgroundImage={heroImages.municipalities}
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

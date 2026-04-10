@@ -10,7 +10,9 @@ import {
   Mountain,
   Waves,
   ArrowRight,
+  Camera,
 } from "lucide-react";
+import { heroImages, galleryItems } from "@/data/images";
 
 const features = [
   {
@@ -88,8 +90,13 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-hero-from via-hero-via to-hero-to text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      <section className="relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImages.home})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-hero-from/85 via-hero-via/70 to-hero-to/80" />
+        <div className="relative text-white max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="flex items-center gap-3 mb-6">
             <Sun size={32} strokeWidth={2} />
             <p className="text-base font-bold tracking-widest uppercase opacity-90">
@@ -118,6 +125,35 @@ export default function Home() {
               観光スポットを見る
               <ArrowRight size={18} />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Photo Gallery */}
+      <section className="bg-surface border-b-2 border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="flex items-center gap-3 mb-8">
+            <Camera size={24} className="text-primary" strokeWidth={2} />
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+              宮崎の風景
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {galleryItems.map((item) => (
+              <div key={item.caption} className="group relative rounded-2xl overflow-hidden aspect-[4/3]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <p className="absolute bottom-3 left-3 text-white text-base font-bold drop-shadow-md">
+                  {item.caption}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { CalendarDays, MapPin, Sparkles } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import { events, eventCategories } from "@/data/events";
+import { heroImages } from "@/data/images";
 
 export default function EventsPage() {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -19,6 +20,7 @@ export default function EventsPage() {
         title="イベント・祭り"
         subtitle="宮崎の四季を彩る伝統行事、花の名所、スポーツイベントを紹介"
         icon={CalendarDays}
+        backgroundImage={heroImages.events}
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
