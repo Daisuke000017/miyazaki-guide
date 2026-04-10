@@ -26,7 +26,7 @@ const contents = [
     icon: Building2,
     title: "市町村紹介",
     description:
-      "26市町村をエリア別に紹介。各市町村の特徴と空港・駅からのアクセス時間を一覧で掲載。",
+      "26市町村をエリア別に紹介。各市町村の特徴と空港・駅からのアクセス時間を掲載。",
   },
   {
     icon: TrainFront,
@@ -53,34 +53,32 @@ export default function AboutPage() {
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Mission */}
-        <section className="bg-surface rounded-xl border border-border p-6 mb-6">
-          <h2 className="text-lg font-bold mb-3">このサイトについて</h2>
-          <p className="text-sm text-muted leading-relaxed">
+        <section className="bg-surface rounded-2xl border-2 border-border p-7 mb-6">
+          <h2 className="text-xl font-bold mb-3">このサイトについて</h2>
+          <p className="text-base text-muted leading-relaxed">
             「みやざきガイド」は、宮崎県の魅力をコミュニティのメンバーに届けるために作られた情報サイトです。
-            観光、グルメ、市町村情報、アクセス方法、イベント情報など、宮崎を訪れる際に役立つ情報を一つにまとめています。
+            観光、グルメ、市町村情報、アクセス方法、イベント情報など、宮崎を訪れる際に役立つ情報をひとつにまとめています。
           </p>
         </section>
 
         {/* Contents */}
-        <section className="bg-surface rounded-xl border border-border p-6 mb-6">
-          <h2 className="text-lg font-bold mb-4">コンテンツ一覧</h2>
-          <div className="space-y-4">
+        <section className="bg-surface rounded-2xl border-2 border-border p-7 mb-6">
+          <h2 className="text-xl font-bold mb-5">コンテンツ一覧</h2>
+          <div className="space-y-5">
             {contents.map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.title} className="flex gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center shrink-0 mt-0.5">
+                <div key={item.title} className="flex gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-primary-light flex items-center justify-center shrink-0 mt-0.5">
                     <Icon
-                      size={16}
+                      size={20}
                       className="text-primary"
-                      strokeWidth={1.8}
+                      strokeWidth={2}
                     />
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold mb-0.5">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs text-muted leading-relaxed">
+                    <h3 className="text-base font-bold mb-1">{item.title}</h3>
+                    <p className="text-base text-muted leading-relaxed">
                       {item.description}
                     </p>
                   </div>
@@ -91,16 +89,16 @@ export default function AboutPage() {
         </section>
 
         {/* Disclaimer */}
-        <section className="bg-surface rounded-xl border border-border p-6">
-          <div className="flex items-center gap-2 mb-3">
+        <section className="bg-primary-light/50 rounded-2xl border-2 border-primary-subtle p-7">
+          <div className="flex items-center gap-2.5 mb-3">
             <AlertTriangle
-              size={16}
+              size={20}
               className="text-primary"
-              strokeWidth={1.8}
+              strokeWidth={2}
             />
-            <h2 className="text-lg font-bold">ご注意</h2>
+            <h2 className="text-xl font-bold">ご注意</h2>
           </div>
-          <div className="text-sm text-muted leading-relaxed space-y-2">
+          <div className="text-base text-muted leading-relaxed space-y-2">
             <p>
               掲載されている情報は変更になる場合があります。
               お出かけの際は各施設・店舗の公式サイトやSNSで最新情報をご確認ください。

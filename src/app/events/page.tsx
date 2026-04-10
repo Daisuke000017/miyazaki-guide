@@ -21,15 +21,15 @@ export default function EventsPage() {
         icon={CalendarDays}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Category filter */}
         <div className="flex flex-wrap gap-2 mb-8">
           <button
             onClick={() => setSelectedCategory("")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+            className={`px-4 py-2 rounded-full text-sm font-bold transition-colors ${
               selectedCategory === ""
-                ? "bg-foreground text-background"
-                : "bg-surface text-muted hover:text-foreground border border-border"
+                ? "bg-primary text-white"
+                : "bg-primary-light text-muted hover:text-foreground"
             }`}
           >
             すべて
@@ -38,10 +38,10 @@ export default function EventsPage() {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+              className={`px-4 py-2 rounded-full text-sm font-bold transition-colors ${
                 selectedCategory === cat
-                  ? "bg-foreground text-background"
-                  : "bg-surface text-muted hover:text-foreground border border-border"
+                  ? "bg-primary text-white"
+                  : "bg-primary-light text-muted hover:text-foreground"
               }`}
             >
               {cat}
@@ -49,50 +49,50 @@ export default function EventsPage() {
           ))}
         </div>
 
-        <p className="text-xs text-muted mb-6">
+        <p className="text-sm text-muted mb-6 font-medium">
           {filtered.length} 件のイベント
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((event) => (
             <div
               key={event.name}
-              className="bg-surface rounded-xl border border-border p-5 hover:border-primary/30 hover:shadow-sm transition-all duration-200 flex flex-col"
+              className="bg-surface rounded-2xl border-2 border-border p-6 hover:border-primary hover:shadow-md transition-all duration-200 flex flex-col"
             >
               <div className="flex items-start justify-between mb-3">
-                <h3 className="text-base font-semibold">{event.name}</h3>
-                <span className="text-xs bg-primary-light text-primary px-2 py-0.5 rounded-md font-medium shrink-0">
+                <h3 className="text-lg font-bold">{event.name}</h3>
+                <span className="text-sm bg-primary-light text-primary-hover px-3 py-1 rounded-full font-bold shrink-0">
                   {event.category}
                 </span>
               </div>
 
-              <div className="flex items-center gap-3 mb-3">
-                <span className="flex items-center gap-1 text-xs text-primary font-medium">
-                  <CalendarDays size={12} strokeWidth={1.8} />
+              <div className="flex items-center gap-4 mb-4">
+                <span className="flex items-center gap-1.5 text-sm text-primary font-bold">
+                  <CalendarDays size={15} strokeWidth={2} />
                   {event.period}
                 </span>
-                <span className="flex items-center gap-1 text-xs text-muted">
-                  <MapPin size={12} strokeWidth={1.8} />
+                <span className="flex items-center gap-1.5 text-sm text-muted">
+                  <MapPin size={14} strokeWidth={2} />
                   {event.area}
                 </span>
               </div>
 
-              <p className="text-sm text-muted leading-relaxed flex-1">
+              <p className="text-base text-muted leading-relaxed flex-1">
                 {event.description}
               </p>
 
-              <div className="mt-3 pt-3 border-t border-border">
-                <div className="flex items-center gap-1.5 text-xs text-secondary font-medium">
-                  <Sparkles size={12} strokeWidth={1.8} />
+              <div className="mt-4 pt-4 border-t-2 border-border">
+                <div className="flex items-center gap-2 text-sm text-secondary font-bold">
+                  <Sparkles size={15} strokeWidth={2} />
                   {event.highlight}
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-1.5 mt-3">
+              <div className="flex flex-wrap gap-2 mt-3">
                 {event.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs bg-background text-muted px-2 py-0.5 rounded-md border border-border"
+                    className="text-sm bg-primary-light/60 text-muted px-3 py-1 rounded-full"
                   >
                     {tag}
                   </span>

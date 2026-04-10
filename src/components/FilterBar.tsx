@@ -30,37 +30,37 @@ export default function FilterBar({
   areaLabel = "エリア",
 }: FilterBarProps) {
   return (
-    <div className="bg-surface border border-border rounded-xl p-4 md:p-5 space-y-4">
+    <div className="bg-surface border-2 border-border rounded-2xl p-5 md:p-6 space-y-5">
       {/* Search */}
       <div className="relative">
         <Search
-          size={16}
-          className="absolute left-3 top-1/2 -translate-y-1/2 text-muted"
-          strokeWidth={1.8}
+          size={20}
+          className="absolute left-4 top-1/2 -translate-y-1/2 text-muted"
+          strokeWidth={2}
         />
         <input
           type="text"
           value={searchValue}
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder={searchPlaceholder}
-          className="w-full pl-9 pr-4 py-2.5 bg-background border border-border rounded-lg text-sm text-foreground placeholder:text-muted/60 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-colors"
+          className="w-full pl-12 pr-4 py-3.5 bg-background border-2 border-border rounded-xl text-base text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors"
         />
       </div>
 
       {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-3">
+      <div className="flex flex-col sm:flex-row gap-4">
         {/* Category */}
         <div className="flex-1">
-          <label className="text-xs font-medium text-muted block mb-1.5">
+          <label className="text-sm font-bold text-muted block mb-2">
             {categoryLabel}
           </label>
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-2">
             <button
               onClick={() => onCategoryChange("")}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+              className={`px-4 py-2 rounded-full text-sm font-bold transition-colors ${
                 selectedCategory === ""
-                  ? "bg-foreground text-background"
-                  : "bg-background text-muted hover:text-foreground border border-border"
+                  ? "bg-primary text-white"
+                  : "bg-primary-light text-muted hover:text-foreground"
               }`}
             >
               すべて
@@ -69,10 +69,10 @@ export default function FilterBar({
               <button
                 key={cat}
                 onClick={() => onCategoryChange(cat)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                className={`px-4 py-2 rounded-full text-sm font-bold transition-colors ${
                   selectedCategory === cat
-                    ? "bg-foreground text-background"
-                    : "bg-background text-muted hover:text-foreground border border-border"
+                    ? "bg-primary text-white"
+                    : "bg-primary-light text-muted hover:text-foreground"
                 }`}
               >
                 {cat}
@@ -83,16 +83,16 @@ export default function FilterBar({
 
         {/* Area */}
         <div className="flex-1">
-          <label className="text-xs font-medium text-muted block mb-1.5">
+          <label className="text-sm font-bold text-muted block mb-2">
             {areaLabel}
           </label>
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-2">
             <button
               onClick={() => onAreaChange("")}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+              className={`px-4 py-2 rounded-full text-sm font-bold transition-colors ${
                 selectedArea === ""
-                  ? "bg-foreground text-background"
-                  : "bg-background text-muted hover:text-foreground border border-border"
+                  ? "bg-secondary text-white"
+                  : "bg-secondary-light text-muted hover:text-foreground"
               }`}
             >
               すべて
@@ -101,10 +101,10 @@ export default function FilterBar({
               <button
                 key={area}
                 onClick={() => onAreaChange(area)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                className={`px-4 py-2 rounded-full text-sm font-bold transition-colors ${
                   selectedArea === area
-                    ? "bg-foreground text-background"
-                    : "bg-background text-muted hover:text-foreground border border-border"
+                    ? "bg-secondary text-white"
+                    : "bg-secondary-light text-muted hover:text-foreground"
                 }`}
               >
                 {area}

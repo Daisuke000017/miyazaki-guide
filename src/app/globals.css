@@ -1,22 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafaf9;
-  --foreground: #1c1917;
-  --muted: #78716c;
-  --border: #e7e5e4;
-  --primary: #ea580c;
-  --primary-hover: #c2410c;
-  --primary-light: #fff7ed;
-  --primary-subtle: #fed7aa;
-  --secondary: #0d9488;
-  --secondary-hover: #0f766e;
-  --secondary-light: #f0fdfa;
-  --accent: #0284c7;
-  --accent-light: #f0f9ff;
+  --background: #fffdf7;
+  --foreground: #2d2518;
+  --muted: #7a6e5d;
+  --border: #f0e6d3;
+  --primary: #f59e0b;
+  --primary-hover: #d97706;
+  --primary-light: #fef3c7;
+  --primary-subtle: #fde68a;
+  --secondary: #10b981;
+  --secondary-hover: #059669;
+  --secondary-light: #d1fae5;
+  --accent: #38bdf8;
+  --accent-light: #e0f2fe;
   --surface: #ffffff;
-  --hero-from: #1c1917;
-  --hero-to: #292524;
+  --hero-from: #f59e0b;
+  --hero-via: #fbbf24;
+  --hero-to: #34d399;
 }
 
 @theme inline {
@@ -35,6 +36,7 @@
   --color-accent-light: var(--accent-light);
   --color-surface: var(--surface);
   --color-hero-from: var(--hero-from);
+  --color-hero-via: var(--hero-via);
   --color-hero-to: var(--hero-to);
 }
 
@@ -45,6 +47,8 @@ body {
     "Hiragino Sans", Meiryo, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 ::selection {
