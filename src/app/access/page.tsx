@@ -1,10 +1,18 @@
+import {
+  TrainFront,
+  Plane,
+  Car,
+  Lightbulb,
+  Clock,
+  ArrowRight,
+} from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import { accessPoints, accessTips } from "@/data/access";
 
-const typeLabels = {
-  airport: "空港",
-  station: "駅",
-  ic: "インターチェンジ",
+const typeConfig = {
+  airport: { label: "空港", icon: Plane, color: "text-primary bg-primary-light" },
+  station: { label: "駅", icon: TrainFront, color: "text-secondary bg-secondary-light" },
+  ic: { label: "IC", icon: Car, color: "text-accent bg-accent-light" },
 };
 
 export default function AccessPage() {
@@ -12,85 +20,97 @@ export default function AccessPage() {
     <>
       <PageHeader
         title="アクセス情報"
-        subtitle="宮崎への行き方と県内の主要交通拠点"
-        emoji="🚗"
+        subtitle="宮崎への行き方と県内主要交通拠点からの所要時間を一覧で確認"
+        icon={TrainFront}
       />
 
-      {/* Tips */}
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Tips */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           {accessTips.map((tip) => (
             <div
               key={tip.title}
-              className="bg-accent-light/10 border border-accent/20 rounded-2xl p-5"
+              className="bg-surface border border-border rounded-xl p-4"
             >
-              <span className="text-2xl block mb-2">{tip.emoji}</span>
-              <h3 className="font-bold text-sm mb-1">{tip.title}</h3>
-              <p className="text-xs text-foreground/70">{tip.description}</p>
+              <div className="flex items-center gap-2 mb-2">
+                <Lightbulb
+                  size={14}
+                  className="text-primary"
+                  strokeWidth={1.8}
+                />
+                <h3 className="text-sm font-semibold">{tip.title}</h3>
+              </div>
+              <p className="text-xs text-muted leading-relaxed">
+                {tip.description}
+              </p>
             </div>
           ))}
         </div>
 
         {/* Access Points */}
-        <div className="space-y-8">
-          {accessPoints.map((point) => (
-            <div
-              key={point.name}
-              className="bg-card-bg rounded-2xl shadow-md border border-primary-light/20 p-6"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl">{point.emoji}</span>
-                <div>
-                  <h3 className="text-lg font-bold">{point.name}</h3>
-                  <span className="text-xs bg-primary-light/20 text-primary-dark px-2 py-0.5 rounded-full">
-                    {typeLabels[point.type]}
-                  </span>
+        <div className="space-y-6">
+          {accessPoints.map((point) => {
+            const config = typeConfig[point.type];
+            const Icon = config.icon;
+            return (
+              <div
+                key={point.name}
+                className="bg-surface rounded-xl border border-border overflow-hidden"
+              >
+                <div className="p-5 border-b border-border">
+                  <div className="flex items-center gap-3">
+                    <div
+                      className={`w-10 h-10 rounded-lg flex items-center justify-center ${config.color}`}
+                    >
+                      <Icon size={20} strokeWidth={1.8} />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-semibold">{point.name}</h3>
+                      <span
+                        className={`text-xs font-medium ${config.color} px-1.5 py-0.5 rounded`}
+                      >
+                        {config.label}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted mt-3 leading-relaxed">
+                    {point.description}
+                  </p>
+                </div>
+
+                <div className="divide-y divide-border">
+                  {point.connections.map((conn) => (
+                    <div
+                      key={conn.destination}
+                      className="flex items-center justify-between px-5 py-3 hover:bg-background transition-colors"
+                    >
+                      <div className="flex items-center gap-2">
+                        <ArrowRight
+                          size={14}
+                          className="text-muted"
+                          strokeWidth={1.8}
+                        />
+                        <span className="text-sm font-medium">
+                          {conn.destination}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <span className="text-xs text-muted">
+                          {conn.method}
+                        </span>
+                        <span className="flex items-center gap-1 text-xs font-medium text-primary bg-primary-light px-2 py-0.5 rounded-md">
+                          <Clock size={10} strokeWidth={2} />
+                          {conn.duration}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <p className="text-sm text-foreground/70 mb-4">
-                {point.description}
-              </p>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-primary-light/20">
-                      <th className="text-left py-2 px-3 text-foreground/60 font-medium">
-                        行き先
-                      </th>
-                      <th className="text-left py-2 px-3 text-foreground/60 font-medium">
-                        交通手段
-                      </th>
-                      <th className="text-left py-2 px-3 text-foreground/60 font-medium">
-                        所要時間
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {point.connections.map((conn) => (
-                      <tr
-                        key={conn.destination}
-                        className="border-b border-primary-light/10"
-                      >
-                        <td className="py-2 px-3 font-medium">
-                          {conn.destination}
-                        </td>
-                        <td className="py-2 px-3 text-foreground/70">
-                          {conn.method}
-                        </td>
-                        <td className="py-2 px-3">
-                          <span className="bg-secondary-light/20 text-secondary px-2 py-0.5 rounded-full text-xs font-medium">
-                            {conn.duration}
-                          </span>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
-      </section>
+      </div>
     </>
   );
 }

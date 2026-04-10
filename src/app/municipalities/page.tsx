@@ -1,79 +1,93 @@
+import { Building2, Plane, TrainFront, Users } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
-import { municipalities } from "@/data/municipalities";
-
-const regions = [
-  "県央",
-  "県北",
-  "県西",
-  "県南",
-  "西都・児湯",
-  "県北（高千穂エリア）",
-];
+import { municipalities, regions } from "@/data/municipalities";
 
 export default function MunicipalitiesPage() {
   return (
     <>
       <PageHeader
         title="市町村紹介"
-        subtitle="宮崎県26市町村、それぞれに個性と魅力がいっぱい"
-        emoji="🏘️"
+        subtitle="宮崎県26市町村をエリア別に紹介。各市町村への空港・駅からのアクセス情報付き。"
+        icon={Building2}
       />
-      <section className="max-w-6xl mx-auto px-4 py-12">
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Region nav */}
+        <div className="flex flex-wrap gap-2 mb-8">
+          {regions.map((region) => (
+            <a
+              key={region}
+              href={`#${region}`}
+              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-surface border border-border text-muted hover:text-foreground hover:border-primary/30 transition-colors"
+            >
+              {region}
+            </a>
+          ))}
+        </div>
+
         {regions.map((region) => {
           const items = municipalities.filter((m) => m.region === region);
           if (items.length === 0) return null;
           return (
-            <div key={region} className="mb-12">
-              <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-                <span className="bg-primary text-white px-3 py-1 rounded-full text-sm">
-                  {region}
+            <section key={region} id={region} className="mb-12 scroll-mt-20">
+              <div className="flex items-center gap-2 mb-5">
+                <h2 className="text-lg font-bold">{region}</h2>
+                <span className="text-xs text-muted bg-background px-2 py-0.5 rounded-md border border-border">
+                  {items.length}市町村
                 </span>
-              </h2>
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {items.map((m) => (
                   <div
                     key={m.name}
-                    className="bg-card-bg rounded-2xl shadow-md border border-primary-light/20 p-6 hover:shadow-lg transition-shadow"
+                    className="bg-surface rounded-xl border border-border p-5 hover:border-primary/30 hover:shadow-sm transition-all"
                   >
                     <div className="flex items-start justify-between mb-2">
-                      <h3 className="text-lg font-bold">
-                        {m.name}
-                        <span className="text-xs ml-2 bg-secondary-light/20 text-secondary px-2 py-0.5 rounded-full">
+                      <div className="flex items-center gap-2">
+                        <h3 className="text-base font-semibold">{m.name}</h3>
+                        <span className="text-xs bg-secondary-light text-secondary px-1.5 py-0.5 rounded font-medium">
                           {m.type}
                         </span>
-                      </h3>
-                      <span className="text-xs text-foreground/50">
+                      </div>
+                      <span className="flex items-center gap-1 text-xs text-muted">
+                        <Users size={12} strokeWidth={1.8} />
                         {m.population}
                       </span>
                     </div>
-                    <p className="text-sm text-foreground/70 mb-3">
+
+                    <p className="text-sm text-muted leading-relaxed mb-3">
                       {m.description}
                     </p>
+
                     <div className="flex flex-wrap gap-1.5 mb-3">
                       {m.highlights.map((h) => (
                         <span
                           key={h}
-                          className="text-xs bg-primary-light/20 text-primary-dark px-2 py-0.5 rounded-full"
+                          className="text-xs bg-primary-light text-primary-hover px-2 py-0.5 rounded-md font-medium"
                         >
                           {h}
                         </span>
                       ))}
                     </div>
-                    <div className="text-xs text-foreground/60 space-y-1 border-t border-primary-light/10 pt-3">
-                      <p>
-                        ✈️ 宮崎空港から: {m.accessFromMiyazakiAirport}
-                      </p>
-                      <p>
-                        🚃 宮崎駅から: {m.accessFromMiyazakiStation}
-                      </p>
+
+                    <div className="border-t border-border pt-3 grid grid-cols-2 gap-2 text-xs text-muted">
+                      <div className="flex items-center gap-1.5">
+                        <Plane size={12} strokeWidth={1.8} />
+                        <span>空港から: {m.accessFromAirport}</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <TrainFront size={12} strokeWidth={1.8} />
+                        <span>宮崎駅から: {m.accessFromStation}</span>
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
+            </section>
           );
         })}
-      </section>
+      </div>
     </>
   );
 }
