@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { UtensilsCrossed, MapPinned, Banknote, Star } from "lucide-react";
+import { MapPinned, Banknote, Star, UtensilsCrossed } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import FilterBar from "@/components/FilterBar";
 import {
@@ -33,13 +33,13 @@ export default function GourmetPage() {
   return (
     <>
       <PageHeader
+        enTitle="Gourmet"
         title="グルメ"
         subtitle="宮崎県内の人気飲食店をカテゴリ・エリア別に厳選紹介"
-        icon={UtensilsCrossed}
         backgroundImage={heroImages.gourmet}
       />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <FilterBar
           searchValue={search}
           onSearchChange={setSearch}
@@ -61,7 +61,7 @@ export default function GourmetPage() {
           {filtered.map((r) => (
             <div
               key={r.name}
-              className="bg-surface rounded-2xl border-2 border-border p-6 hover:border-primary hover:shadow-md transition-all duration-200 flex flex-col"
+              className="bg-white rounded-3xl border border-border p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col"
             >
               <div className="flex items-start justify-between mb-3">
                 <div>
@@ -77,16 +77,16 @@ export default function GourmetPage() {
                     </span>
                   </div>
                 </div>
-                <span className="text-sm bg-primary-light text-primary-hover px-3 py-1 rounded-full font-bold shrink-0">
+                <span className="text-xs bg-primary-light text-primary font-bold px-3 py-1 rounded-full shrink-0">
                   {r.category}
                 </span>
               </div>
 
-              <p className="text-base text-muted leading-relaxed flex-1">
+              <p className="text-sm text-muted leading-relaxed flex-1">
                 {r.description}
               </p>
 
-              <div className="mt-4 pt-4 border-t-2 border-border">
+              <div className="mt-4 pt-4 border-t border-border">
                 <div className="flex items-center gap-2 text-sm text-secondary font-bold">
                   <Star size={15} strokeWidth={2} />
                   {r.signature}
@@ -97,7 +97,7 @@ export default function GourmetPage() {
                 {r.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-sm bg-primary-light/60 text-muted px-3 py-1 rounded-full"
+                    className="text-xs bg-primary-light/60 text-muted px-3 py-1 rounded-full"
                   >
                     {tag}
                   </span>

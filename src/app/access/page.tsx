@@ -32,19 +32,19 @@ export default function AccessPage() {
   return (
     <>
       <PageHeader
+        enTitle="Access"
         title="アクセス情報"
         subtitle="宮崎への行き方と県内主要交通拠点からの所要時間を一覧で確認"
-        icon={TrainFront}
         backgroundImage={heroImages.access}
       />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Tips */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
           {accessTips.map((tip) => (
             <div
               key={tip.title}
-              className="bg-primary-light/50 border-2 border-primary-subtle rounded-2xl p-5"
+              className="bg-primary-light/50 border border-primary-subtle rounded-3xl p-5"
             >
               <div className="flex items-center gap-2 mb-3">
                 <Lightbulb
@@ -69,9 +69,9 @@ export default function AccessPage() {
             return (
               <div
                 key={point.name}
-                className="bg-surface rounded-2xl border-2 border-border overflow-hidden"
+                className="bg-white rounded-3xl border border-border overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all"
               >
-                <div className="p-6 border-b-2 border-border">
+                <div className="p-6 border-b border-border">
                   <div className="flex items-center gap-4">
                     <div
                       className={`w-12 h-12 rounded-2xl flex items-center justify-center ${config.color}`}
@@ -92,7 +92,7 @@ export default function AccessPage() {
                   </p>
                 </div>
 
-                <div className="divide-y-2 divide-border">
+                <div className="divide-y divide-border">
                   {point.connections.map((conn) => (
                     <div
                       key={conn.destination}

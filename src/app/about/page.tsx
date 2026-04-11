@@ -1,5 +1,4 @@
 import {
-  Info,
   UtensilsCrossed,
   MapPin,
   Building2,
@@ -47,15 +46,15 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        title="About"
-        subtitle="みやざきガイドについて"
-        icon={Info}
+        enTitle="About"
+        title="みやざきガイドについて"
+        subtitle="このサイトの紹介とコンテンツ一覧"
         backgroundImage={heroImages.about}
       />
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Mission */}
-        <section className="bg-surface rounded-2xl border-2 border-border p-7 mb-6">
+        <section className="bg-white rounded-3xl border border-border p-7 mb-6">
           <h2 className="text-xl font-bold mb-3">このサイトについて</h2>
           <p className="text-base text-muted leading-relaxed">
             「みやざきガイド」は、宮崎県の魅力をコミュニティのメンバーに届けるために作られた情報サイトです。
@@ -64,7 +63,7 @@ export default function AboutPage() {
         </section>
 
         {/* Contents */}
-        <section className="bg-surface rounded-2xl border-2 border-border p-7 mb-6">
+        <section className="bg-white rounded-3xl border border-border p-7 mb-6">
           <h2 className="text-xl font-bold mb-5">コンテンツ一覧</h2>
           <div className="space-y-5">
             {contents.map((item) => {
@@ -91,7 +90,7 @@ export default function AboutPage() {
         </section>
 
         {/* Disclaimer */}
-        <section className="bg-primary-light/50 rounded-2xl border-2 border-primary-subtle p-7">
+        <section className="bg-primary-light/50 rounded-3xl border border-primary-subtle p-7">
           <div className="flex items-center gap-2.5 mb-3">
             <AlertTriangle
               size={20}

@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fffdf7;
-  --foreground: #2d2518;
-  --muted: #7a6e5d;
-  --border: #f0e6d3;
-  --primary: #f59e0b;
-  --primary-hover: #d97706;
-  --primary-light: #fef3c7;
-  --primary-subtle: #fde68a;
-  --secondary: #10b981;
-  --secondary-hover: #059669;
-  --secondary-light: #d1fae5;
-  --accent: #38bdf8;
-  --accent-light: #e0f2fe;
+  --background: #ffffff;
+  --foreground: #333333;
+  --muted: #888888;
+  --border: #e8e8e8;
+  --primary: #5fb89a;
+  --primary-hover: #4a9e83;
+  --primary-light: #e8f5ef;
+  --primary-subtle: #c8e6d8;
+  --secondary: #e8878f;
+  --secondary-hover: #d4727a;
+  --secondary-light: #fce8ea;
+  --accent: #f4b76b;
+  --accent-light: #fef3e2;
   --surface: #ffffff;
-  --hero-from: #f59e0b;
-  --hero-via: #fbbf24;
-  --hero-to: #34d399;
+  --hero-from: #5fb89a;
+  --hero-via: #7ec8ae;
+  --hero-to: #e8878f;
 }
 
 @theme inline {
@@ -54,4 +54,44 @@ body {
 ::selection {
   background: var(--primary-subtle);
   color: var(--foreground);
+}
+
+/* Grid pattern background (cascade-bbq style) */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(95, 184, 154, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(95, 184, 154, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Section title English + Japanese */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--foreground);
+}
+
+.section-subtitle {
+  font-size: 0.875rem;
+  color: var(--primary);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* Fade-in animation on scroll */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out both;
 }

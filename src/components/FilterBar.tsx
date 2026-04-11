@@ -30,7 +30,7 @@ export default function FilterBar({
   areaLabel = "エリア",
 }: FilterBarProps) {
   return (
-    <div className="bg-surface border-2 border-border rounded-2xl p-5 md:p-6 space-y-5">
+    <div className="bg-white rounded-3xl border border-border p-5 md:p-6 space-y-5">
       {/* Search */}
       <div className="relative">
         <Search
@@ -43,7 +43,7 @@ export default function FilterBar({
           value={searchValue}
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder={searchPlaceholder}
-          className="w-full pl-12 pr-4 py-3.5 bg-background border-2 border-border rounded-xl text-base text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors"
+          className="w-full pl-12 pr-4 py-3.5 bg-background border border-border rounded-2xl text-base text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors"
         />
       </div>
 
@@ -51,7 +51,7 @@ export default function FilterBar({
       <div className="flex flex-col sm:flex-row gap-4">
         {/* Category */}
         <div className="flex-1">
-          <label className="text-sm font-bold text-muted block mb-2">
+          <label className="text-xs font-bold text-muted tracking-wider uppercase block mb-2">
             {categoryLabel}
           </label>
           <div className="flex flex-wrap gap-2">
@@ -83,7 +83,7 @@ export default function FilterBar({
 
         {/* Area */}
         <div className="flex-1">
-          <label className="text-sm font-bold text-muted block mb-2">
+          <label className="text-xs font-bold text-muted tracking-wider uppercase block mb-2">
             {areaLabel}
           </label>
           <div className="flex flex-wrap gap-2">

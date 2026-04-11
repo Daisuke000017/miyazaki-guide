@@ -1,16 +1,14 @@
-import type { LucideIcon } from "lucide-react";
-
 type PageHeaderProps = {
   title: string;
   subtitle?: string;
-  icon?: LucideIcon;
+  enTitle?: string;
   backgroundImage?: string;
 };
 
 export default function PageHeader({
   title,
   subtitle,
-  icon: Icon,
+  enTitle,
   backgroundImage,
 }: PageHeaderProps) {
   return (
@@ -26,25 +24,28 @@ export default function PageHeader({
       <div
         className={`absolute inset-0 ${
           backgroundImage
-            ? "bg-gradient-to-r from-hero-from/85 via-hero-via/75 to-hero-to/80"
-            : "bg-gradient-to-r from-hero-from via-hero-via to-hero-to"
+            ? "bg-gradient-to-r from-white/90 via-white/70 to-white/80"
+            : "bg-grid"
         }`}
       />
       {/* Content */}
-      <div className="relative text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-16">
-          <div className="flex items-center gap-4 mb-3">
-            {Icon && (
-              <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center">
-                <Icon size={26} className="text-white" strokeWidth={2} />
-              </div>
-            )}
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight drop-shadow-sm">
+      <div className="relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          {enTitle && (
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-1">
+              {enTitle}
+            </h1>
+          )}
+          {!enTitle && (
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-1">
               {title}
             </h1>
-          </div>
+          )}
+          <p className="text-sm font-semibold text-primary tracking-wider">
+            {enTitle ? title : ""}
+          </p>
           {subtitle && (
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed drop-shadow-sm">
+            <p className="text-base text-muted max-w-2xl leading-relaxed mt-4">
               {subtitle}
             </p>
           )}

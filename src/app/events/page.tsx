@@ -17,13 +17,13 @@ export default function EventsPage() {
   return (
     <>
       <PageHeader
+        enTitle="Events"
         title="イベント・祭り"
         subtitle="宮崎の四季を彩る伝統行事、花の名所、スポーツイベントを紹介"
-        icon={CalendarDays}
         backgroundImage={heroImages.events}
       />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Category filter */}
         <div className="flex flex-wrap gap-2 mb-8">
           <button
@@ -59,11 +59,11 @@ export default function EventsPage() {
           {filtered.map((event) => (
             <div
               key={event.name}
-              className="bg-surface rounded-2xl border-2 border-border p-6 hover:border-primary hover:shadow-md transition-all duration-200 flex flex-col"
+              className="bg-white rounded-3xl border border-border p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col"
             >
               <div className="flex items-start justify-between mb-3">
                 <h3 className="text-lg font-bold">{event.name}</h3>
-                <span className="text-sm bg-primary-light text-primary-hover px-3 py-1 rounded-full font-bold shrink-0">
+                <span className="text-xs bg-primary-light text-primary px-3 py-1 rounded-full font-bold shrink-0">
                   {event.category}
                 </span>
               </div>
@@ -79,11 +79,11 @@ export default function EventsPage() {
                 </span>
               </div>
 
-              <p className="text-base text-muted leading-relaxed flex-1">
+              <p className="text-sm text-muted leading-relaxed flex-1">
                 {event.description}
               </p>
 
-              <div className="mt-4 pt-4 border-t-2 border-border">
+              <div className="mt-4 pt-4 border-t border-border">
                 <div className="flex items-center gap-2 text-sm text-secondary font-bold">
                   <Sparkles size={15} strokeWidth={2} />
                   {event.highlight}
@@ -94,7 +94,7 @@ export default function EventsPage() {
                 {event.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-sm bg-primary-light/60 text-muted px-3 py-1 rounded-full"
+                    className="text-xs bg-primary-light/60 text-muted px-3 py-1 rounded-full"
                   >
                     {tag}
                   </span>

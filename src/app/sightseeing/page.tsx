@@ -33,13 +33,13 @@ export default function SightseeingPage() {
   return (
     <>
       <PageHeader
+        enTitle="Sightseeing"
         title="観光スポット"
         subtitle="宮崎県内の人気観光スポットをカテゴリ・エリア別に厳選紹介"
-        icon={MapPin}
         backgroundImage={heroImages.sightseeing}
       />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <FilterBar
           searchValue={search}
           onSearchChange={setSearch}
@@ -60,7 +60,7 @@ export default function SightseeingPage() {
           {filtered.map((s) => (
             <div
               key={s.name}
-              className="bg-surface rounded-2xl border-2 border-border p-6 hover:border-secondary hover:shadow-md transition-all duration-200 flex flex-col"
+              className="bg-white rounded-3xl border border-border p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col"
             >
               <div className="flex items-start justify-between mb-3">
                 <div>
@@ -70,17 +70,17 @@ export default function SightseeingPage() {
                     {s.area}
                   </span>
                 </div>
-                <span className="text-sm bg-secondary-light text-secondary-hover px-3 py-1 rounded-full font-bold shrink-0">
+                <span className="text-xs bg-primary-light text-primary font-bold px-3 py-1 rounded-full shrink-0">
                   {s.category}
                 </span>
               </div>
 
-              <p className="text-base text-muted leading-relaxed flex-1">
+              <p className="text-sm text-muted leading-relaxed flex-1">
                 {s.description}
               </p>
 
-              <div className="mt-4 pt-4 border-t-2 border-border space-y-2">
-                <div className="flex items-center gap-2 text-sm text-primary font-bold">
+              <div className="mt-4 pt-4 border-t border-border space-y-2">
+                <div className="flex items-center gap-2 text-sm text-secondary font-bold">
                   <Sparkles size={15} strokeWidth={2} />
                   {s.highlight}
                 </div>
@@ -94,7 +94,7 @@ export default function SightseeingPage() {
                 {s.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-sm bg-secondary-light/60 text-muted px-3 py-1 rounded-full"
+                    className="text-xs bg-primary-light/60 text-muted px-3 py-1 rounded-full"
                   >
                     {tag}
                   </span>
