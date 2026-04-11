@@ -13,6 +13,17 @@ export const images = {
   michinoekiPhoenix: `${COMMONS_BASE}/e/ea/Michinoeki_Phoenix_Miyazaki_Japan.jpg/1280px-Michinoeki_Phoenix_Miyazaki_Japan.jpg`,
   yokagura: `${COMMONS_BASE}/d/d6/Yokagura_Sacred_Dance_%2831561847845%29.jpg/1280px-Yokagura_Sacred_Dance_%2831561847845%29.jpg`,
   heiwadaiTower: `${COMMONS_BASE}/9/9f/Tower_of_Peace_in_Heiwadai_Park_4.jpg/800px-Tower_of_Peace_in_Heiwadai_Park_4.jpg`,
+  // Food category images
+  kamaageUdon: `${COMMONS_BASE}/5/54/Kama-age_Udon.jpg/800px-Kama-age_Udon.jpg`,
+  tonkotsuRamen: `${COMMONS_BASE}/9/95/Tonkotsu_ramen.JPG/800px-Tonkotsu_ramen.JPG`,
+  kaisendon: `${COMMONS_BASE}/3/38/Kaisendon_-_sashimi_fish_bowl_-_July_2014.jpg/800px-Kaisendon_-_sashimi_fish_bowl_-_July_2014.jpg`,
+  chickenNanbanTsukishima: `${COMMONS_BASE}/8/8c/Chicken_nanban_jetalone_in_Tsukishima%2C_Tokyo.jpg/800px-Chicken_nanban_jetalone_in_Tsukishima%2C_Tokyo.jpg`,
+  sashimiMoriawase: `${COMMONS_BASE}/e/e4/Sashimi_Moriawase.JPG/800px-Sashimi_Moriawase.JPG`,
+  mangoPudding: `${COMMONS_BASE}/0/0e/Mango_pudding.JPG/800px-Mango_pudding.JPG`,
+  sirloinSteak: `${COMMONS_BASE}/3/33/Sirloin_steak.JPG/800px-Sirloin_steak.JPG`,
+  beefTobanYaki: `${COMMONS_BASE}/c/c2/Beef_toban_yaki.JPG/800px-Beef_toban_yaki.JPG`,
+  cookingYakitori: `${COMMONS_BASE}/4/4b/Cooking_yakitori.jpg/800px-Cooking_yakitori.jpg`,
+  ichiranRamen: `${COMMONS_BASE}/8/84/Ichiran_Ramen.JPG/800px-Ichiran_Ramen.JPG`,
 } as const;
 
 // Page hero image assignments

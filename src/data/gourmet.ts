@@ -1,3 +1,5 @@
+import { images } from "./images";
+
 export type Restaurant = {
   name: string;
   area: string;
@@ -7,6 +9,8 @@ export type Restaurant = {
   address: string;
   priceRange: string;
   tags: string[];
+  image?: string;
+  url?: string;
 };
 
 export const gourmetCategories = [
@@ -43,6 +47,8 @@ export const restaurants: Restaurant[] = [
     address: "延岡市安賀多町4-1-12",
     priceRange: "¥700〜¥1,100",
     tags: ["自家製麺", "化学調味料不使用", "個室あり"],
+    image: images.tonkotsuRamen,
+    url: "https://www.ramen-fuya.online/",
   },
 
   // ── チキン南蛮 ──
@@ -56,6 +62,8 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市橘通東3丁目",
     priceRange: "¥1,000〜¥1,500",
     tags: ["老舗", "定番"],
+    image: images.chickenNanbanOgura,
+    url: "https://www.ogurachain.com/",
   },
   {
     name: "おぐら 瀬頭店",
@@ -67,6 +75,8 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市瀬頭2丁目",
     priceRange: "¥1,000〜¥1,500",
     tags: ["駐車場あり", "定番"],
+    image: images.chickenNanban,
+    url: "https://www.ogurachain.com/",
   },
   {
     name: "直ちゃん",
@@ -78,6 +88,7 @@ export const restaurants: Restaurant[] = [
     address: "延岡市栄町",
     priceRange: "¥800〜¥1,200",
     tags: ["元祖", "甘酢"],
+    image: images.chickenNanbanTsukishima,
   },
   {
     name: "クレイトンハウス",
@@ -89,6 +100,8 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市大塚町（他複数店舗）",
     priceRange: "¥1,000〜¥1,800",
     tags: ["洋食", "ファミリー"],
+    image: images.chickenNanban,
+    url: "https://craighton-house.com/",
   },
 
   // ── 地鶏 ──
@@ -102,6 +115,8 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市中央通",
     priceRange: "¥2,000〜¥4,000",
     tags: ["炭火焼", "名店"],
+    image: images.cookingYakitori,
+    url: "https://www.gunkei.jp/",
   },
   {
     name: "丸万焼鳥 本店",
@@ -113,6 +128,7 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市中央通",
     priceRange: "¥2,000〜¥3,500",
     tags: ["老舗", "備長炭"],
+    image: images.cookingYakitori,
   },
   {
     name: "鳥の里",
@@ -124,6 +140,7 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市橘通西",
     priceRange: "¥2,500〜¥5,000",
     tags: ["自社養鶏", "コース"],
+    image: images.cookingYakitori,
   },
   {
     name: "車 宮崎本店",
@@ -135,6 +152,7 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市中央通",
     priceRange: "¥2,000〜¥4,000",
     tags: ["炭火焼", "居酒屋"],
+    image: images.cookingYakitori,
   },
 
   // ── 宮崎牛 ──
@@ -148,6 +166,8 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市新別府町",
     priceRange: "¥3,000〜¥8,000",
     tags: ["A5ランク", "直営"],
+    image: images.sirloinSteak,
+    url: "https://rest.miyachiku.jp/",
   },
   {
     name: "焼肉の幸加園",
@@ -159,6 +179,7 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市橘通東",
     priceRange: "¥3,000〜¥6,000",
     tags: ["焼肉", "家族向け"],
+    image: images.beefTobanYaki,
   },
   {
     name: "焼肉 牛匠",
@@ -170,6 +191,7 @@ export const restaurants: Restaurant[] = [
     address: "都城市中町",
     priceRange: "¥3,500〜¥7,000",
     tags: ["産地直送", "厳選"],
+    image: images.beefTobanYaki,
   },
 
   // ── 海鮮 ──
@@ -183,6 +205,7 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市青島",
     priceRange: "¥1,200〜¥2,500",
     tags: ["海鮮丼", "青島"],
+    image: images.kaisendon,
   },
   {
     name: "びびんや",
@@ -194,6 +217,7 @@ export const restaurants: Restaurant[] = [
     address: "日南市油津",
     priceRange: "¥1,500〜¥5,000",
     tags: ["伊勢海老", "油津"],
+    image: images.sashimiMoriawase,
   },
   {
     name: "大海",
@@ -205,6 +229,7 @@ export const restaurants: Restaurant[] = [
     address: "日向市中町",
     priceRange: "¥1,000〜¥3,000",
     tags: ["天然魚", "日向灘"],
+    image: images.sashimiMoriawase,
   },
 
   // ── 辛麺・ラーメン ──
@@ -218,6 +243,8 @@ export const restaurants: Restaurant[] = [
     address: "延岡市栄町",
     priceRange: "¥800〜¥1,200",
     tags: ["辛麺発祥", "辛さ選択"],
+    image: images.ichiranRamen,
+    url: "https://www.karamenya-masumoto.com/",
   },
   {
     name: "辛麺屋 輪 宮崎店",
@@ -229,6 +256,7 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市橘通西",
     priceRange: "¥800〜¥1,100",
     tags: ["深夜営業", "〆"],
+    image: images.ichiranRamen,
   },
   {
     name: "風来軒 本店",
@@ -240,6 +268,8 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市恒久",
     priceRange: "¥700〜¥1,000",
     tags: ["豚骨", "濃厚"],
+    image: images.tonkotsuRamen,
+    url: "https://furaiken.co.jp/",
   },
   {
     name: "栄養軒",
@@ -251,6 +281,7 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市大淀",
     priceRange: "¥600〜¥900",
     tags: ["老舗", "あっさり"],
+    image: images.tonkotsuRamen,
   },
 
   // ── うどん ──
@@ -264,6 +295,7 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市川原町",
     priceRange: "¥600〜¥1,000",
     tags: ["釜揚げ", "名店"],
+    image: images.kamaageUdon,
   },
   {
     name: "釜揚げうどん 岩見",
@@ -275,6 +307,7 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市高松町",
     priceRange: "¥600〜¥1,000",
     tags: ["行列", "人気"],
+    image: images.kamaageUdon,
   },
   {
     name: "戸隠",
@@ -286,6 +319,7 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市堀川町",
     priceRange: "¥500〜¥900",
     tags: ["定番", "もちもち"],
+    image: images.kamaageUdon,
   },
 
   // ── 郷土料理 ──
@@ -299,6 +333,7 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市橘通西",
     priceRange: "¥2,000〜¥4,000",
     tags: ["郷土料理", "観光"],
+    image: images.cookingYakitori,
   },
   {
     name: "一平寿し",
@@ -310,6 +345,7 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市中央通",
     priceRange: "¥5,000〜¥12,000",
     tags: ["寿司", "コース"],
+    image: images.sashimiMoriawase,
   },
   {
     name: "めんくい亭",
@@ -321,6 +357,7 @@ export const restaurants: Restaurant[] = [
     address: "高千穂町三田井",
     priceRange: "¥1,000〜¥2,000",
     tags: ["高千穂", "山の幸"],
+    image: images.beefTobanYaki,
   },
 
   // ── カフェ・スイーツ ──
@@ -334,6 +371,8 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市中央通",
     priceRange: "¥800〜¥2,500",
     tags: ["マンゴー", "パフェ"],
+    image: images.mangoPudding,
+    url: "https://www.miyazaki-fruit-ohno.com/",
   },
   {
     name: "Café de 珈琲 若草通り店",
@@ -345,6 +384,7 @@ export const restaurants: Restaurant[] = [
     address: "宮崎市若草通",
     priceRange: "¥500〜¥1,200",
     tags: ["自家焙煎", "スペシャルティ"],
+    image: images.mangoPudding,
   },
   {
     name: "飫肥天 元祖おび天本舗",
@@ -356,5 +396,6 @@ export const restaurants: Restaurant[] = [
     address: "日南市飫肥",
     priceRange: "¥200〜¥500",
     tags: ["食べ歩き", "飫肥"],
+    image: images.mangoPudding,
   },
 ];
