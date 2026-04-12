@@ -6,6 +6,7 @@ export type SightseeingSpot = {
   highlight: string;
   accessNote: string;
   tags: string[];
+  url?: string;
 };
 
 export const sightseeingCategories = [
@@ -39,6 +40,7 @@ export const sightseeingSpots: SightseeingSpot[] = [
     highlight: "ボートから眺める真名井の滝",
     accessNote: "宮崎空港から車で約2時間30分",
     tags: ["国の名勝", "ボート体験"],
+    url: "https://takachiho-kanko.info/sightseeing/18/",
   },
   {
     name: "馬ヶ背",
@@ -79,6 +81,7 @@ export const sightseeingSpots: SightseeingSpot[] = [
     highlight: "不動池のコバルトブルー",
     accessNote: "宮崎空港から車で約1時間30分",
     tags: ["国立公園", "トレッキング"],
+    url: "https://ebino-ecomuseum.go.jp/",
   },
   {
     name: "生駒高原",
@@ -101,6 +104,7 @@ export const sightseeingSpots: SightseeingSpot[] = [
     highlight: "運玉投げ（男性は左手、女性は右手）",
     accessNote: "宮崎空港から車で約50分",
     tags: ["縁結び", "洞窟神社"],
+    url: "https://www.udojingu.or.jp/",
   },
   {
     name: "天岩戸神社・天安河原",
@@ -111,6 +115,7 @@ export const sightseeingSpots: SightseeingSpot[] = [
     highlight: "天安河原の神秘的な積み石",
     accessNote: "高千穂バスセンターから車で約10分",
     tags: ["日本神話", "パワースポット"],
+    url: "https://amanoiwato-jinja.jp/",
   },
   {
     name: "高千穂神社",
@@ -121,6 +126,7 @@ export const sightseeingSpots: SightseeingSpot[] = [
     highlight: "毎晩20時からの高千穂神楽",
     accessNote: "高千穂バスセンターから徒歩15分",
     tags: ["夫婦杉", "神楽"],
+    url: "https://takachiho-kanko.info/",
   },
   {
     name: "青島神社",
@@ -131,6 +137,7 @@ export const sightseeingSpots: SightseeingSpot[] = [
     highlight: "亜熱帯植物に囲まれた島の神社",
     accessNote: "宮崎空港から車で約15分",
     tags: ["縁結び", "鬼の洗濯板"],
+    url: "https://aoshima-jinja.jp/",
   },
   {
     name: "宮崎神宮",
@@ -153,6 +160,7 @@ export const sightseeingSpots: SightseeingSpot[] = [
     highlight: "食べ歩きマップ付き散策",
     accessNote: "宮崎空港から車で約50分",
     tags: ["城下町", "食べ歩き"],
+    url: "https://www.kankou-nichinan.jp/tourisms/291/",
   },
   {
     name: "西都原古墳群",
@@ -173,6 +181,7 @@ export const sightseeingSpots: SightseeingSpot[] = [
     highlight: "世界唯一の復刻モアイ像",
     accessNote: "宮崎空港から車で約40分",
     tags: ["モアイ", "フォトスポット"],
+    url: "https://sun-messe.co.jp/",
   },
   {
     name: "美々津の町並み",
@@ -215,6 +224,7 @@ export const sightseeingSpots: SightseeingSpot[] = [
     highlight: "野生の御崎馬が暮らす岬",
     accessNote: "宮崎空港から車で約1時間30分",
     tags: ["御崎馬", "灯台"],
+    url: "https://kushima-city.jp/toi/",
   },
 
   // ── 温泉 ──
@@ -259,6 +269,7 @@ export const sightseeingSpots: SightseeingSpot[] = [
     highlight: "フラミンゴショーと動物との触れ合い",
     accessNote: "宮崎空港から車で約25分",
     tags: ["動物園", "ファミリー"],
+    url: "https://www.miyazaki-city-zoo.jp/",
   },
   {
     name: "綾の照葉大吊橋",
@@ -279,5 +290,6 @@ export const sightseeingSpots: SightseeingSpot[] = [
     highlight: "日本最南端でスキー体験",
     accessNote: "宮崎空港から車で約2時間40分",
     tags: ["スキー", "最南端"],
+    url: "http://www.gokase.co.jp/ski/",
   },
 ];
